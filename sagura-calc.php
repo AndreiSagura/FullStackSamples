@@ -187,7 +187,7 @@ l1:
 ?>
 
 <body><form align="center" method="post" attribute="post">
-  <h1>Sagura PHP Calculator<br></h1>
+  <h1>Sagura PHP/MySQL Calculator<br></h1>
   <table style="background-color:cornsilk; color:indigo;" align="center" border=5><tr align="center"><td>
     <p>First Value:<br/><input type="text" name="first" value="<?php echo $first; ?>"></p>
     
