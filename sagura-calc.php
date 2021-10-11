@@ -20,20 +20,17 @@ But we should always keep in mind that long, verbose comments are often redundan
 
 <?php 
 
+  const MaxHistory = 5;
+  include('dbconfig.php');
   const calcHost = 'localhost';
-  const calcUser = 'id17698625_saguratest';
-  const passwd = '1234567890Ab+';
-  const calcDB = 'id17698625_asagura';
-  //const calcDB = 'calcdb';
   const calcTable = 'calctbl';
-  const MaxHistory = 10;
-
+  
   class calc_db {
 
     public $conn;
 
     function connect() {
-      $this->conn = new mysqli(calcHost, calcUser, passwd, calcDB);
+      $this->conn = new mysqli(calcHost, username, passwd, calcDB);
       if ($this->conn->connect_error) die($this->conn->error);
       return $this->conn;
     }

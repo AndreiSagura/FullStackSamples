@@ -10,10 +10,8 @@
 
 <?php
 
+  include('dbconfig.php');
   const myhost = 'localhost';
-  const username = 'id17698625_saguratest';
-  const passwd = '1234567890Ab+';
-  const mydb = 'id17698625_asagura';
   const mytable = 'saguratbl';
   
   class mydb {
@@ -21,7 +19,7 @@
     public $conn;
 
     function connect() {
-      $this->conn = new mysqli(myhost, username, passwd, mydb);
+      $this->conn = new mysqli(myhost, username, passwd, calcDB);
       if ($this->conn->connect_error) die($this->conn->error);
     }
     
@@ -38,7 +36,7 @@
         `result` TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
       $this->query($sql);
-      echo mydb . " db and " . mytable . " table connected successfully<br>";
+      echo calcDB . " db and " . mytable . " table connected successfully<br>";
     }
     
     function insRow($first, $second, $operator, $result) {
@@ -78,10 +76,10 @@
     }
   }
 
-  $first = "first";
-  $second = "second";
-  $operator = "operator";
-  $result = "result";
+  $first = "first2";
+  $second = "second3";
+  $operator = "operator4";
+  $result = "result5";
 
   function insRow($db, $first, $second, $operator, $result) {
     $sql = "INSERT INTO `" . mytable . "` (`id`, `first`, `second`, `operator`, `result`) VALUES (NULL, '$first', '$second', '$operator', '$result')";
