@@ -26,7 +26,7 @@ But we should always keep in mind that long, verbose comments are often redundan
   const calcDB = 'id17698625_asagura';
   //const calcDB = 'calcdb';
   const calcTable = 'calctbl';
-  const MaxHistory = 15;
+  const MaxHistory = 10;
 
   class calc_db {
 
@@ -191,7 +191,6 @@ l1:
 
 <body><form align="center" method="post" attribute="post">
   <h1>Sagura PHP Calculator<br></h1>
-  <?php include('github.php'); ?>
   <table style="background-color:cornsilk; color:indigo;" align="center" border=5><tr align="center"><td>
     <p>First Value:<br/><input type="text" name="first" value="<?php echo $first; ?>"></p>
     
@@ -218,14 +217,14 @@ l1:
     <p><strong>
       Result:<br>
       <input type="text" id="result" name="result" readonly="readonly" value="<?php echo $result; ?>">
-    </strong></p><br>
-    <i>Copyright (C) Andrei Sagura 2021.<br>All rights reserved!</i>
+    </strong></p>
   </td>
   <?php if ($oldRes != "") 
     echo '<td><table style="color:darkgray;">' . $oldRes . '</table></td>'; 
   ?>
   </tr></table>
   </form>
+  <?php include('github.php'); ?>
   <?php include('copyright.php'); ?>
 </body>
 </html>
